@@ -6,13 +6,14 @@ import { ArtistService } from './services/artist.service';
 import { AlbumService } from './services/album.service';
 import { SongService } from './services/song.service';
 import { CommonModule } from '@angular/common';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  standalone: true,
-  imports: [CommonModule],
+  // standalone: true,
+  // imports: [CommonModule],
 })
 export class AppComponent {
   artists: Artist[] = [];
@@ -22,14 +23,17 @@ export class AppComponent {
   selectedAlbum: Album | undefined = new Album;
   showAlbums: boolean = false;
   showSongs: boolean = false;
+  standalone: boolean = true;
 
   constructor(
     private artistService: ArtistService,
     private albumService: AlbumService,
-    private songService: SongService
+    private songService: SongService,
+    private location: Location
   ) {}
 
   ngOnInit() {
+    console.log('AppComponent initialized');
     this.loadArtists();
   }
 
@@ -56,4 +60,17 @@ export class AppComponent {
         this.showSongs = true;
       });
   }
-}
+
+  goBack(): void {
+    if (this.showSongs) {
+      // If currently showing songs, go back to showing albums
+      this.showSongs = false;
+      this.showAlbums = true;
+    } else if (this.showAlbums) {
+      // If currently showing albums, go back to showing artists
+      this.showAlbums = false;
+    } else {
+      // If no other section is active, navigate back using the Location service
+      this.location.back();
+    }
+  }}

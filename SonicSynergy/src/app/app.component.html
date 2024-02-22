@@ -1,30 +1,35 @@
 <header>
   <h1>My Music App</h1>
+  <button (click)="goBack()">Back</button>
 </header>
 
-<main>
-  <div *ngIf="!showAlbums && !showSongs"> <!-- Show list of artists -->
+<main class="flex justify-center">
+  <div *ngIf="!showAlbums && !showSongs">
     <h2>List of Artists</h2>
     <ul>
-      <li *ngFor="let artist of artists">
-        <a (click)="showAlbumsForArtist(artist.id)">{{ artist.name }}</a>
+      <li  *ngFor="let artist of artists">
+        <button (click)="showAlbumsForArtist(artist.id)">
+        <img [width]="200" [src]="artist.artistImg" alt="Artist Image"/>
+        {{ artist.name }}</button>
       </li>
     </ul>
   </div>
 
-  <div *ngIf="showAlbums && !showSongs"> <!-- Show list of albums for selected artist -->
+  <div *ngIf="showAlbums && !showSongs"> 
     <h2>Albums for {{ selectedArtist?.name }}</h2>
     <ul>
       <li *ngFor="let album of albums">
-        <a (click)="showSongsForAlbum(album.id)">{{ album.name }}</a>
+        <a (click)="showSongsForAlbum(album.id)">
+        <img [width]="200" [src]="album.albumArt" alt="Album Art"/>
+        {{ album.name }}</a>
       </li>
     </ul>
   </div>
 
-  <div *ngIf="showSongs"> <!-- Show list of songs for selected album -->
+  <div *ngIf="showSongs">
     <h2>Songs for {{ selectedAlbum?.name }}</h2>
     <ul>
-      <li *ngFor="let song of songs">
+      <li class="list-unstyled" *ngFor="let song of songs">
         {{ song.name }}
       </li>
     </ul>
