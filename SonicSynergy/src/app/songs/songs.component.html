@@ -1,0 +1,6 @@
+<h2>Songs for {{ albumName }}</h2>
+<ul>
+  <li *ngFor="let song of songs">
+    {{ song.name }} - Length: {{ song.length }} seconds
+  </li>
+</ul>

@@ -1,0 +1,36 @@
+<header>
+  <h1>My Music App</h1>
+</header>
+
+<main>
+  <div *ngIf="!showAlbums && !showSongs"> <!-- Show list of artists -->
+    <h2>List of Artists</h2>
+    <ul>
+      <li *ngFor="let artist of artists">
+        <a (click)="showAlbumsForArtist(artist.id)">{{ artist.name }}</a>
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="showAlbums && !showSongs"> <!-- Show list of albums for selected artist -->
+    <h2>Albums for {{ selectedArtist?.name }}</h2>
+    <ul>
+      <li *ngFor="let album of albums">
+        <a (click)="showSongsForAlbum(album.id)">{{ album.name }}</a>
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="showSongs"> <!-- Show list of songs for selected album -->
+    <h2>Songs for {{ selectedAlbum?.name }}</h2>
+    <ul>
+      <li *ngFor="let song of songs">
+        {{ song.name }}
+      </li>
+    </ul>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2024 My Music App</p>
+</footer>
