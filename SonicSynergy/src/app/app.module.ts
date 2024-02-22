@@ -7,9 +7,6 @@ import { AlbumService } from './services/album.service';
 import { SongService } from './services/song.service';
 
 @NgModule({
-  declarations: [
-  AppComponent,
-  ],
   imports: [
     BrowserModule,
     AppComponent,
