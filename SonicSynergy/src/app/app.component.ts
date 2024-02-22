@@ -5,12 +5,14 @@ import { Song } from './models/song.model';
 import { ArtistService } from './services/artist.service';
 import { AlbumService } from './services/album.service';
 import { SongService } from './services/song.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  standalone: true
+  standalone: true,
+  imports: [CommonModule],
 })
 export class AppComponent {
   artists: Artist[] = [];
