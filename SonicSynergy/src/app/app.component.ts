@@ -24,6 +24,7 @@ export class AppComponent {
   showAlbums: boolean = false;
   showSongs: boolean = false;
   standalone: boolean = true;
+  showName: boolean = false;
 
   constructor(
     private artistService: ArtistService,
@@ -73,4 +74,15 @@ export class AppComponent {
       // If no other section is active, navigate back using the Location service
       this.location.back();
     }
-  }}
+  }
+
+  // Formats the time length turning seconds into minutes and seconds.
+  formatSongLength(seconds: number): string {
+    const minutes = Math.floor(seconds /  60);
+    const remainingSeconds = seconds %  60;
+    // Conditionally format minutes to drop leading zero
+    const formattedMinutes = minutes <  10 ? minutes : minutes.toString().padStart(2, '0');
+    return `${formattedMinutes}:${remainingSeconds.toString().padStart(2, '0')}`;
+  }
+    
+}
