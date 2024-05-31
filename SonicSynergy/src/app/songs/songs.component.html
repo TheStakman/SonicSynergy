@@ -1,6 +1,70 @@
-<h2>Songs for {{ albumName }}</h2>
-<ul>
-  <li *ngFor="let song of songs">
-    {{ song.name }} - Length: {{ song.length }} seconds
-  </li>
-</ul>
+<div class="header text-center my-3">
+  <button class="btn btn-primary" (click)="backToAlbums()">Back to Albums</button>
+  <button class="btn btn-primary ml-3" (click)="showAddSongForm = !showAddSongForm">Add Song</button>
+</div>
+
+<!-- Add Song Form -->
+<div *ngIf="showAddSongForm" class="container my-4">
+  <form (ngSubmit)="addSong()" class="bg-light p-4 rounded shadow-sm">
+    <div class="form-group mb-3">
+      <label for="name" class="form-label">Song Name</label>
+      <input [(ngModel)]="newSong.name" name="name" id="name" class="form-control" placeholder="Song Name" required />
+    </div>
+    <div class="form-group mb-3">
+      <label for="length" class="form-label">Song Length (seconds)</label>
+      <input [(ngModel)]="newSong.length" name="length" id="length" class="form-control" placeholder="Song Length" required />
+    </div>
+    <div class="text-center">
+      <button class="btn border-black text-white" (click)="cancelAdd()" style="background-color: red;">Cancel</button>
+      <button type="submit" class="btn text-white border-black ml-3" style="background-color: rgb(61, 59, 59);">Add Song</button>
+    </div>
+  </form>
+</div>
+
+<div *ngIf="songs.length === 0" class="text-white text-center my-4">
+  No songs found on this album.
+</div>
+
+<div *ngIf="songs.length > 0" class="text-white">
+  <h2 class="h2 text-white text-center">Songs</h2>
+  <div class="items-center" style="max-width: 500px;">
+    <ol class="list-decimal list-inside ml-5">
+      <li *ngFor="let song of songs" class="mb-3">
+        <div class="song-details">
+          <div class="song-info">
+            {{ song.name }} - {{ formatSongLength(song.length) }}
+          </div>
+          <div class="song-actions">
+            <button class="btn btn-warning" (click)="showEditForm(song)">Edit</button>
+            <button class="btn btn-danger" (click)="confirmDelete(song)">Delete</button>
+          </div>
+        </div>
+
+        <!-- Edit Song Form -->
+        <div *ngIf="showEditSongForm && selectedSong._id === song._id" class="edit-form">
+          <form (ngSubmit)="editSong()">
+            <div class="form-group mb-3">
+              <label for="name" class="form-label">Song Name</label>
+              <input [(ngModel)]="selectedSong.name" name="name" id="name" class="form-control" placeholder="Song Name" required />
+            </div>
+            <div class="form-group mb-3">
+              <label for="length" class="form-label">Song Length (seconds)</label>
+              <input [(ngModel)]="selectedSong.length" name="length" id="length" class="form-control" placeholder="Song Length" required />
+            </div>
+            <div class="text-center">
+              <button type="button" class="btn text-white border-black mx-1" style="background-color: red;" (click)="cancelEdit()">Cancel</button>
+              <button type="submit" class="btn text-white border-black mx-1" style="background-color: rgb(61, 59, 59);">Save</button>
+            </div>
+          </form>
+        </div>
+        
+        <!-- Delete Confirmation -->
+        <div *ngIf="showDeleteConfirmation && selectedSong._id === song._id" class="delete-confirmation text-center">
+          <p class="mb-2 text-black">Are you sure you want to delete {{ selectedSong.name }}?</p>
+          <button class="btn border-black text-white" style="background-color: red;" (click)="cancelDelete()">No</button>
+          <button class="btn ml-3 text-white border-black" style="background-color: rgb(61, 59, 59);" (click)="deleteSong()">Yes</button>
+        </div>
+      </li>
+    </ol>
+  </div>
+</div>

@@ -2,34 +2,27 @@ import { Component } from '@angular/core';
 import { Artist } from './models/artist.model';
 import { Album } from './models/album.model';
 import { Song } from './models/song.model';
-import { ArtistService } from './services/artist.service';
-import { AlbumService } from './services/album.service';
-import { SongService } from './services/song.service';
-import { CommonModule } from '@angular/common';
 import { Location } from '@angular/common';
+import { DataService } from './services/data.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  // standalone: true,
-  // imports: [CommonModule],
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   artists: Artist[] = [];
   albums: Album[] = [];
   songs: Song[] = [];
-  selectedArtist: Artist | undefined = new Artist;
-  selectedAlbum: Album | undefined = new Album;
+  selectedArtist: Artist | undefined;
+  selectedAlbum: Album | undefined;
   showAlbums: boolean = false;
   showSongs: boolean = false;
   standalone: boolean = true;
   showName: boolean = false;
 
   constructor(
-    private artistService: ArtistService,
-    private albumService: AlbumService,
-    private songService: SongService,
+    private dataService: DataService,
     private location: Location
   ) {}
 
@@ -39,25 +32,25 @@ export class AppComponent {
   }
 
   loadArtists() {
-    this.artistService.getArtists()
+    this.dataService.getArtists()
       .subscribe(artists => this.artists = artists);
   }
 
-  showAlbumsForArtist(artistId: number) {
-    this.albumService.getAlbums(artistId)
+  showAlbumsForArtist(artistId: string) {
+    this.dataService.getAlbums(artistId)
       .subscribe(albums => {
         this.albums = albums;
-        this.selectedArtist = this.artists.find(artist => artist.id === artistId);
+        this.selectedArtist = this.artists.find(artist => artist._id === artistId);
         this.showAlbums = true;
         this.showSongs = false;
       });
   }
 
-  showSongsForAlbum(albumId: number) {
-    this.songService.getSongs(albumId)
+  showSongsForAlbum(albumId: string) {
+    this.dataService.getSongs(albumId)
       .subscribe(songs => {
         this.songs = songs;
-        this.selectedAlbum = this.albums.find(album => album.id === albumId);
+        this.selectedAlbum = this.albums.find(album => album._id === albumId);
         this.showSongs = true;
       });
   }

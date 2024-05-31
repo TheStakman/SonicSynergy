@@ -1,0 +1,57 @@
+/* list container */
+ol.list-decimal.list-inside.ml-5 {
+    padding-left: 0;
+    list-style-position: inside;
+  }
+  
+  /* list items */
+  li.mb-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    background-color: #2d3748;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    margin-bottom: 0.5rem;
+    color: white;
+  }
+  
+  /* song name, length */
+  .song-details {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    margin-right: 50px;
+  }
+
+  .song-info {
+    flex-grow: 1;
+    margin-right: 1rem;
+  }
+  
+  /* button spacing */
+  .song-actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+/* edit form and delete confirmation */
+  .edit-form,
+  .delete-confirmation {
+    width: 100%;
+    background-color: #f8f9fa;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    margin-top: 0.5rem;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .text-black {
+    color: black;
+  }
+  

@@ -1,0 +1,141 @@
+[{
+  "_id": {
+    "$oid": "6658e514b6955371ace91234"
+  },
+  "name": "1989",
+  "artistId": "6658e471b6955371ace9122e",
+  "albumArt": "https://upload.wikimedia.org/wikipedia/en/f/f6/Taylor_Swift_-_1989.png"
+},
+{
+  "_id": {
+    "$oid": "6658e514b6955371ace91235"
+  },
+  "name": "folklore",
+  "artistId": "6658e471b6955371ace9122e",
+  "albumArt": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f8/Taylor_Swift_-_Folklore.png/220px-Taylor_Swift_-_Folklore.png"
+},
+{
+  "_id": {
+    "$oid": "6658e514b6955371ace91236"
+  },
+  "name": "Lover",
+  "artistId": "6658e471b6955371ace9122e",
+  "albumArt": "https://upload.wikimedia.org/wikipedia/en/thumb/c/cd/Taylor_Swift_-_Lover.png/220px-Taylor_Swift_-_Lover.png"
+},
+{
+  "_id": {
+    "$oid": "6658e514b6955371ace91237"
+  },
+  "name": "Pinkerton",
+  "artistId": "6658e471b6955371ace9122f",
+  "albumArt": "https://upload.wikimedia.org/wikipedia/en/c/ca/Pinkerton_cover.jpg"
+},
+{
+  "_id": {
+    "$oid": "6658e514b6955371ace91238"
+  },
+  "name": "The Blue Album",
+  "artistId": "6658e471b6955371ace9122f",
+  "albumArt": "https://m.media-amazon.com/images/I/71nYpz++VCL._UF1000,1000_QL80_.jpg"
+},
+{
+  "_id": {
+    "$oid": "6658e514b6955371ace91239"
+  },
+  "name": "The Green Album",
+  "artistId": "6658e471b6955371ace9122f",
+  "albumArt": "https://m.media-amazon.com/images/I/61pAyFJQ43L._UF1000,1000_QL80_.jpg"
+},
+{
+  "_id": {
+    "$oid": "6658e514b6955371ace9123a"
+  },
+  "name": "Untitled",
+  "artistId": "6658e471b6955371ace91230",
+  "albumArt": "https://upload.wikimedia.org/wikipedia/en/8/8f/Blink-182_-_Blink-182_cover.jpg"
+},
+{
+  "_id": {
+    "$oid": "6658e514b6955371ace9123b"
+  },
+  "name": "Dude Ranch",
+  "artistId": "6658e471b6955371ace91230",
+  "albumArt": "https://m.media-amazon.com/images/I/615YuyE7K0L._UF1000,1000_QL80_.jpg"
+},
+{
+  "_id": {
+    "$oid": "6658e514b6955371ace9123c"
+  },
+  "name": "Enema of the State",
+  "artistId": "6658e471b6955371ace91230",
+  "albumArt": "https://upload.wikimedia.org/wikipedia/en/a/a6/Blink-182_-_Enema_of_the_State_cover.jpg"
+},
+{
+  "_id": {
+    "$oid": "6658e514b6955371ace9123d"
+  },
+  "name": "Anti",
+  "artistId": "6658e471b6955371ace91231",
+  "albumArt": "https://upload.wikimedia.org/wikipedia/en/3/32/Rihanna_-_Anti.png"
+},
+{
+  "_id": {
+    "$oid": "6658e514b6955371ace9123e"
+  },
+  "name": "Loud",
+  "artistId": "6658e471b6955371ace91231",
+  "albumArt": "https://m.media-amazon.com/images/I/71iMVBsItRL._UF1000,1000_QL80_.jpg"
+},
+{
+  "_id": {
+    "$oid": "6658e514b6955371ace9123f"
+  },
+  "name": "Good Girl Gone Bad",
+  "artistId": "6658e471b6955371ace91231",
+  "albumArt": "https://upload.wikimedia.org/wikipedia/en/f/fe/Rihanna_-_Good_Girl_Gone_Bad_Reloaded.png"
+},
+{
+  "_id": {
+    "$oid": "6658f341422441698b6d76cb"
+  },
+  "artistId": "",
+  "name": "Purple Rain",
+  "albumArt": "https://m.media-amazon.com/images/I/81CzfbO4CrL._UF1000,1000_QL80_.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6658f35b422441698b6d76d4"
+  },
+  "artistId": "",
+  "name": "Purple Rain",
+  "albumArt": "https://m.media-amazon.com/images/I/81CzfbO4CrL._UF1000,1000_QL80_.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6658f42d1fe0495158085c6a"
+  },
+  "artistId": "",
+  "name": "Purple Rain",
+  "albumArt": "https://m.media-amazon.com/images/I/81CzfbO4CrL._UF1000,1000_QL80_.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6658f48a1fe0495158085c71"
+  },
+  "artistId": "",
+  "name": "Purple Rain",
+  "albumArt": "https://m.media-amazon.com/images/I/81CzfbO4CrL._UF1000,1000_QL80_.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6658f4ba1fe0495158085c75"
+  },
+  "artistId": "",
+  "name": "Prince",
+  "albumArt": "Prince Pic",
+  "__v": 0
+}]

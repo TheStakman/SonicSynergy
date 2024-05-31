@@ -1,22 +1,28 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app.routes';
 import { CommonModule } from '@angular/common';
-import { AppComponent } from './app.component'; // Ensure this import is correct
-import { ArtistService } from './services/artist.service';
-import { AlbumService } from './services/album.service';
-import { SongService } from './services/song.service';
+import { RouterModule } from '@angular/router';
+import { DataService } from './services/data.service';
 
 @NgModule({
-  declarations: [AppComponent], // Declare AppComponent here
+  declarations: [
+    AppComponent
+  ],
   imports: [
     BrowserModule,
-    CommonModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    CommonModule,
+    RouterModule
   ],
   providers: [
-    ArtistService,
-    AlbumService,
-    SongService
+    DataService,
   ],
-  bootstrap: [AppComponent] // Bootstrap AppComponent
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

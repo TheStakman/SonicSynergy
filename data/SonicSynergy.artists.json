@@ -1,0 +1,28 @@
+[{
+  "_id": {
+    "$oid": "6658e471b6955371ace9122e"
+  },
+  "name": "Taylor Swift",
+  "artistImg": "https://del.h-cdn.co/assets/15/17/2048x2048/square-1429897640-taylor-swift-instagram-headshot.jpg"
+},
+{
+  "_id": {
+    "$oid": "6658e471b6955371ace9122f"
+  },
+  "name": "Weezer",
+  "artistImg": "https://i.redd.it/s1tsefalqbe71.jpg"
+},
+{
+  "_id": {
+    "$oid": "6658e471b6955371ace91230"
+  },
+  "name": "Blink-182",
+  "artistImg": "https://ca-times.brightspotcdn.com/dims4/default/efc3361/2147483647/strip/true/crop/3320x2404+0+0/resize/1200x869!/quality/80/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F84%2F3a%2F02eb278c4341bdd83d508749036c%2Fkc-alfred-blink-001.jpg"
+},
+{
+  "_id": {
+    "$oid": "6658e471b6955371ace91231"
+  },
+  "name": "Rihanna",
+  "artistImg": "https://harpersbazaaruk.cdnds.net/16/03/1600x1600/square-1453285089-rihanna.jpg"
+}]

@@ -1,49 +1,12 @@
 <header class="text-center pb-3 bg-slate-700 text-white">
   <h1 class="h1">SonicSynergy</h1>
-  <button class="rounded-pill bg-emerald-300 hover:bg-emerald-400 text-slate-700 px-2 mt-3" (click)="goBack()">Back</button>
 </header>
 
 <main class="flex flex-col items-center bg-slate-800 h-screen">
-
-  <!-- Artists -->
-  <div *ngIf="!showAlbums && !showSongs">
-    <h2 class="h2 text-white text-center">Artists</h2>
-    <ul class="flex flex-col items-center">
-      <li class="mb-3 bg-emerald-300 hover:bg-emerald-400 text-slate-700" *ngFor="let artist of artists">
-        <button class=" text-xl" (click)="showAlbumsForArtist(artist.id)">
-        <img [width]="200" [src]="artist.artistImg" alt="Artist Image"/>
-        {{ artist.name }}</button>
-      </li>
-    </ul>
-  </div>
-
-  <!-- Albums -->
-  <div *ngIf="showAlbums && !showSongs"> 
-    <h2 class="h2 text-white text-center">Albums for {{ selectedArtist?.name }}</h2>
-    <ul class="flex flex-col items-center">
-      <li *ngFor="let album of albums">
-        <button  class="mb-3 bg-emerald-300 hover:bg-emerald-400 text-slate-700" (click)="showSongsForAlbum(album.id)">
-          <img [width]="200" [src]="album.albumArt" alt="Album Art"/>
-          {{ album.name }}
-      </button>
-      </li>
-    </ul>
-  </div>
-
-  <!-- Songs -->
-  <div class="text-white" *ngIf="showSongs">
-    <h2 class="h2 text-white text-center">Songs for {{ selectedAlbum?.name }}</h2>
-    <ol class="list-decimal list-inside ml-5">
-      <li *ngFor="let song of songs">
-        <span class="text-lg">
-          {{ song.name }}
-          {{ formatSongLength(song.length) }}
-        </span>
-      </li>
-    </ol>
-  </div>
-  <footer class="bg-slate-700 py-2 text-white w-full static bottom-0">
-    <p class="text-center">&copy; 2024 SonicSynergy</p>
-  </footer>
+  <router-outlet></router-outlet>
 </main>
+
+<footer class="bg-slate-700 py-2 text-white w-full fixed bottom-0 mt-5">
+  <p class="text-center">&copy; 2024 SonicSynergy</p>
+</footer>
 
